@@ -1,10 +1,12 @@
 import logging
 
 """
-Simple Address Book Program:
-This script collects contact details from the user, logs them to a file, and displays them using Object-Oriented Concepts 
+Simple Address Book Program
+This script collects contact details from the user, logs them to a file, and displays them.
+Using Object-Oriented Concepts to manage relationships between AddressBook and ContactPerson.
 """
 
+# Configure logging
 logging.basicConfig(filename='contacts.log', level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 class ContactPerson:
@@ -15,22 +17,22 @@ class ContactPerson:
         """
         Initializes a ContactPerson object with provided details.
         """
-        self.first_name = first_name
-        self.last_name = last_name
-        self.address = address
-        self.city = city
-        self.state = state
-        self.zip_code = zip_code
-        self.phone_number = phone_number
-        self.email = email
-
+        self.details = {
+            "first_name": first_name,
+            "last_name": last_name,
+            "address": address,
+            "city": city,
+            "state": state,
+            "zip_code": zip_code,
+            "phone_number": phone_number,
+            "email": email
+        }
+    
     def __str__(self):
         """
         Returns a formatted string representation of the contact details.
         """
-        return (f"First Name: {self.first_name}\nLast Name: {self.last_name}\nAddress: {self.address}\n" 
-                f"City: {self.city}\nState: {self.state}\nZip Code: {self.zip_code}\n" 
-                f"Phone Number: {self.phone_number}\nEmail: {self.email}")
+        return str(self.details)
 
 class AddressBook:
     """
@@ -46,11 +48,11 @@ class AddressBook:
         """
         Adds a contact to the address book and logs the details.
         """
-        self.contacts.append(contact)
-        logging.info(f"Contact Saved - {contact}")
+        self.contacts.append(contact.details)
+        logging.info(f"Contact Saved - {contact.details}")
         print("\nContact Saved!")
         print("---------------------------")
-        print(contact)
+        print(contact.details)
     
     def display_contacts(self):
         """
