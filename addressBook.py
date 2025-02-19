@@ -7,7 +7,7 @@ This script collects contact details from the user, logs them to a file, and dis
 logging.basicConfig(
     filename='contacts.log',
     level=logging.INFO,
-    format='%(asctime)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(levelname)s - %(message)s',
 )
 
 class ContactPerson:
@@ -163,22 +163,28 @@ def main():
         choice = input("Enter your choice: ")
         
         if choice == "1":
-            try:
-                print("Enter Contact Details:")
-                first_name = input("First Name: ")
-                last_name = input("Last Name: ")
-                address = input("Address: ")
-                city = input("City: ")
-                state = input("State: ")
-                zip_code = int(input("Zip Code: "))
-                phone_number = int(input("Phone Number: "))
-                email = input("Email: ")
-                
-                contact = ContactPerson(first_name, last_name, address, city, state, zip_code, phone_number, email)
-                address_book.add_contact(contact)
-            except Exception as e:
-                logging.error(f"An error occurred: {e}")
-                print("An error occurred while saving contact details. Please try again.")
+            number_of_contacts = int(input("Enter number of contacts which you want to add: "))
+            
+            while(number_of_contacts != 0):
+                try:
+                    print("\nEnter Contact Details:")
+                    print("----------------------")
+                    first_name = input("First Name: ")
+                    last_name = input("Last Name: ")
+                    address = input("Address: ")
+                    city = input("City: ")
+                    state = input("State: ")
+                    zip_code = int(input("Zip Code: "))
+                    phone_number = int(input("Phone Number: "))
+                    email = input("Email: ")
+                    
+                    contact = ContactPerson(first_name, last_name, address, city, state, zip_code, phone_number, email)
+                    address_book.add_contact(contact)
+                    
+                except Exception as e:
+                    logging.error(f"An error occurred: {e}")
+                    print("An error occurred while saving contact details. Please try again.")
+                number_of_contacts -= 1
         
         elif choice == "2":
             address_book.display_contacts()
