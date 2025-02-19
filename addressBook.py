@@ -127,16 +127,30 @@ class AddressBook:
                 return True
         print("Contact not found.")
         return False
+    
+    def delete_contact(self, first_name, last_name):
+        """
+        Deletes a contact from the address book using their first and last name.
+        
+        Parameters:
+            first_name (str): First name of the contact to delete.
+            last_name (str): Last name of the contact to delete.
+        
+        Returns:
+            bool: True if contact was deleted, False if not found.
+        """
+        for contact in self.contacts:
+            if contact["first_name"] == first_name and contact["last_name"] == last_name:
+                self.contacts.remove(contact)
+                logging.info(f"Contact Deleted - {contact}")
+                print("\nContact Deleted!")
+                return True
+        print("Contact not found.")
+        return False
 
 def main():
     """
-    Provides a menu to add, edit, and display contacts.
-    
-    Parameters:
-        None
-    
-    Returns:
-        None
+    Provides a menu to add, edit, display, and delete contacts.
     """
     address_book = AddressBook()
     while True:
@@ -144,7 +158,8 @@ def main():
         print("1) Add Contact")
         print("2) Display Contacts")
         print("3) Edit Contact")
-        print("4) Exit")
+        print("4) Delete Contact")
+        print("5) Exit")
         choice = input("Enter your choice: ")
         
         if choice == "1":
@@ -191,10 +206,17 @@ def main():
             address_book.edit_contact(first_name, last_name, new_details)
         
         elif choice == "4":
+            print("Enter Contact Name to Delete:")
+            first_name = input("First Name: ")
+            last_name = input("Last Name: ")
+            address_book.delete_contact(first_name, last_name)
+        
+        elif choice == "5":
             print("Exiting Address Book.")
             break
         else:
             print("Invalid choice, please try again.")
+
 
 if __name__ == "__main__":
     main()
