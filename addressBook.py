@@ -134,7 +134,7 @@ class AddressBook:
         print("Contact not found.")
         return False
 
-    def search_by_city(self, city=None):
+    def search_by_city_or_state(self, city=None, state=None):
         """
         Searches for contacts by city or state.
 
@@ -147,7 +147,7 @@ class AddressBook:
         """
         results = []
         for contact in self.contacts:
-            if (city and contact["city"].lower() == city.lower()):
+            if (city and contact["city"].lower() == city.lower()) or (state and contact["state"].lower() == state.lower()):
                 results.append(contact)
         return results
 
@@ -161,7 +161,7 @@ def main():
         print("\nMain Menu:")
         print("1) Create or Select Address Book")
         print("2) Display Address Books")
-        print("3) Search Contacts by City")
+        print("3) Search Contacts by City or State")
         print("4) Exit")
         main_choice = input("Enter your choice: ")
 
@@ -244,10 +244,11 @@ def main():
                     print(f"- {name}")
 
         elif main_choice == "3":
-            city = input("Enter City to search: ")
+            city = input("Enter City to search (or leave blank): ")
+            state = input("Enter State to search (or leave blank): ")
             results = []
             for address_book in address_books.values():
-                results.extend(address_book.search_by_city(city))
+                results.extend(address_book.search_by_city_or_state(city, state))
 
             if results:
                 print("\nSearch Results:")
