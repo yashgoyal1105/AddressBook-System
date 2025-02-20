@@ -1,5 +1,6 @@
 import logging
 from collections import defaultdict
+import operator
 
 logging.basicConfig(
     filename='contacts.log',
@@ -164,6 +165,13 @@ class AddressBook:
             city_count[contact["city"]] += 1
         return dict(city_count)
 
+    def sort_contacts_by_name(self):
+        """
+        Sorts the contacts alphabetically by first name, then last name.
+        """
+        self.contacts.sort(key=operator.itemgetter("first_name", "last_name"))
+        print("\nContacts sorted alphabetically by name.")
+
 def main():
     """
     Main function to manage multiple address books.
@@ -176,7 +184,8 @@ def main():
         print("2) Display Address Books")
         print("3) Search Contacts by City or State")
         print("4) Count Contacts by City")
-        print("5) Exit")
+        print("5) Sort Contacts by Name")
+        print("6) Exit")
         main_choice = input("Enter your choice: ")
 
         if main_choice == "1":
@@ -192,7 +201,8 @@ def main():
                 print("2) Display Contacts")
                 print("3) Edit Contact")
                 print("4) Delete Contact")
-                print("5) Go Back")
+                print("5) Sort Contacts by Name")
+                print("6) Go Back")
                 choice = input("Enter your choice: ")
 
                 if choice == "1":
@@ -245,6 +255,9 @@ def main():
                     address_book.delete_contact(first_name, last_name)
 
                 elif choice == "5":
+                    address_book.sort_contacts_by_name()
+
+                elif choice == "6":
                     break
                 else:
                     print("Invalid choice, please try again.")
@@ -290,6 +303,11 @@ def main():
                 print("No contacts found in any city.")
 
         elif main_choice == "5":
+            for address_book in address_books.values():
+                address_book.sort_contacts_by_name()
+            print("All address books sorted by name.")
+
+        elif main_choice == "6":
             print("Exiting Program.")
             break
         else:
