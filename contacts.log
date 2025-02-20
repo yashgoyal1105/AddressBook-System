@@ -79,3 +79,6 @@ Email: bgb
 2025-02-20 17:03:34,562 - INFO - Contact Saved in book1 - {'first_name': 'eruerju', 'last_name': 'reijoeri', 'address': 'erijoer', 'city': 'eijoe', 'state': 'tn', 'zip_code': 3232, 'phone_number': 2332, 'email': 'rrf'}
 2025-02-20 17:03:48,511 - INFO - Contact Saved in book1 - {'first_name': 'rjuerju', 'last_name': 'reov', 'address': 'vfoij', 'city': 'vriij', 'state': 'raj', 'zip_code': 3434, 'phone_number': 4334, 'email': '3ervr'}
 2025-02-20 17:04:03,290 - INFO - Contact Saved in book1 - {'first_name': 'riosfg', 'last_name': 'goijgs', 'address': 'roimg', 'city': 'sggio', 'state': 'raj', 'zip_code': 4543, 'phone_number': 433, 'email': 'vr'}
+2025-02-20 23:34:21,953 - INFO - Contact Saved in book1 - {'first_name': 'fewfewf', 'last_name': 'ewfewf', 'address': 'efewf', 'city': 'swm', 'state': 'ewwe', 'zip_code': 43456, 'phone_number': 34567, 'email': 'efg'}
+2025-02-20 23:34:33,805 - INFO - Contact Saved in book1 - {'first_name': 'rfhtgh', 'last_name': 'fdsghj', 'address': 'fsdgh', 'city': 'swm', 'state': 'tgtrfh', 'zip_code': 34567, 'phone_number': 2345678, 'email': 'ertyhj'}
+2025-02-20 23:34:45,979 - INFO - Contact Saved in book1 - {'first_name': 'ftggg', 'last_name': 'gxdgc', 'address': 'sdfvdf', 'city': 'jpr', 'state': 'rtyuj', 'zip_code': 23456, 'phone_number': 345678, 'email': 'dfghj'}

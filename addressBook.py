@@ -1,4 +1,5 @@
 import logging
+from collections import defaultdict
 
 logging.basicConfig(
     filename='contacts.log',
@@ -151,6 +152,18 @@ class AddressBook:
                 results.append(contact)
         return results
 
+    def count_contacts_by_city(self):
+        """
+        Counts the number of contacts by city.
+
+        Returns:
+            dict: Dictionary with city names as keys and contact counts as values.
+        """
+        city_count = defaultdict(int)
+        for contact in self.contacts:
+            city_count[contact["city"]] += 1
+        return dict(city_count)
+
 def main():
     """
     Main function to manage multiple address books.
@@ -162,7 +175,8 @@ def main():
         print("1) Create or Select Address Book")
         print("2) Display Address Books")
         print("3) Search Contacts by City or State")
-        print("4) Exit")
+        print("4) Count Contacts by City")
+        print("5) Exit")
         main_choice = input("Enter your choice: ")
 
         if main_choice == "1":
@@ -260,6 +274,22 @@ def main():
                 print("No contacts found in the specified city or state.")
 
         elif main_choice == "4":
+            city_count = defaultdict(int)
+            for address_book in address_books.values():
+                counts = address_book.count_contacts_by_city()
+                for city, count in counts.items():
+                    city_count[city] += count
+
+            if city_count:
+                print("\nContact Count by City:")
+                print("---------------------------")
+                for city, count in city_count.items():
+                    print(f"{city}: {count}")
+                print("---------------------------")
+            else:
+                print("No contacts found in any city.")
+
+        elif main_choice == "5":
             print("Exiting Program.")
             break
         else:
