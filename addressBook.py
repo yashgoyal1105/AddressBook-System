@@ -23,9 +23,6 @@ class ContactPerson:
             zip_code (int): Zip code.
             phone_number (int): Contact phone number.
             email (str): Email address of the contact.
-
-        Returns:
-            None
         """
         self.details = {
             "first_name": first_name,
@@ -42,9 +39,6 @@ class ContactPerson:
         """
         Returns a formatted string representation of the contact details.
 
-        Parameters:
-            None
-
         Returns:
             str: Formatted string containing contact details.
         """
@@ -59,10 +53,7 @@ class AddressBook:
         Initializes an empty address book.
 
         Parameters:
-            None
-
-        Returns:
-            None
+            name (str): The name of the address book.
         """
         self.name = name
         self.contacts = []
@@ -73,9 +64,6 @@ class AddressBook:
 
         Parameters:
             contact (ContactPerson): Contact object to be added.
-
-        Returns:
-            None
         """
         # Check for duplicate entry
         if any(existing_contact["first_name"] == contact.details["first_name"] and
@@ -93,12 +81,6 @@ class AddressBook:
     def display_contacts(self):
         """
         Displays all contacts in the address book.
-
-        Parameters:
-            None
-
-        Returns:
-            None
         """
         if not self.contacts:
             print(f"No contacts found in {self.name}.")
@@ -152,15 +134,26 @@ class AddressBook:
         print("Contact not found.")
         return False
 
+    def search_by_city(self, city=None):
+        """
+        Searches for contacts by city or state.
+
+        Parameters:
+            city (str): City to search for.
+            state (str): State to search for.
+
+        Returns:
+            list: List of contacts matching the search criteria.
+        """
+        results = []
+        for contact in self.contacts:
+            if (city and contact["city"].lower() == city.lower()):
+                results.append(contact)
+        return results
+
 def main():
     """
     Main function to manage multiple address books.
-
-    Parameters:
-        None
-
-    Returns:
-        None
     """
     address_books = {}
 
@@ -168,7 +161,8 @@ def main():
         print("\nMain Menu:")
         print("1) Create or Select Address Book")
         print("2) Display Address Books")
-        print("3) Exit")
+        print("3) Search Contacts by City")
+        print("4) Exit")
         main_choice = input("Enter your choice: ")
 
         if main_choice == "1":
@@ -189,7 +183,7 @@ def main():
 
                 if choice == "1":
                     number_of_times = int(input("How many contacts do you want to add: "))
-                    while number_of_times != 0:
+                    for _ in range(number_of_times):
                         try:
                             print("\nEnter Contact Details:")
                             first_name = input("First Name: ")
@@ -205,7 +199,6 @@ def main():
                         except Exception as e:
                             logging.error(f"An error occurred: {e}")
                             print("An error occurred while saving contact details. Please try again.")
-                        number_of_times -= 1
 
                 elif choice == "2":
                     address_book.display_contacts()
@@ -251,6 +244,21 @@ def main():
                     print(f"- {name}")
 
         elif main_choice == "3":
+            city = input("Enter City to search: ")
+            results = []
+            for address_book in address_books.values():
+                results.extend(address_book.search_by_city(city))
+
+            if results:
+                print("\nSearch Results:")
+                print("---------------------------")
+                for result in results:
+                    print(result)
+                    print("---------------------------")
+            else:
+                print("No contacts found in the specified city or state.")
+
+        elif main_choice == "4":
             print("Exiting Program.")
             break
         else:

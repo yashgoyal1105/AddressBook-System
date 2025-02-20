@@ -1,0 +1,77 @@
+2025-02-18 10:47:50,723 - INFO - Contact Saved - First Name: frg, Last Name: gb, Address: bdgtb, City: bg, State: bgbdg, Zip Code: bgbg, Phone Number: bgn, Email: g cg
+2025-02-18 10:52:09,819 - INFO - Contact Saved - First Name: fdv,
+ Last Name: vdvd,
+ Address: v,
+ City: dfvb,
+ State: bfbd,
+ Zip Code: fdb,
+ Phone Number: vdfvd,
+ Email: dvfd
+2025-02-18 11:09:05,260 - INFO - Contact Saved - First Name: rfv
+Last Name: rvr
+Address: rbg
+City: rttbrg
+State: rbrb
+Zip Code: rttv
+Phone Number: rvbr
+Email: tbvrb
+2025-02-18 11:09:35,883 - INFO - Contact Saved - First Name: yash
+Last Name: ferfr
+Address: bgb
+City: grbg
+State: b
+Zip Code: bgb
+Phone Number: gbgb
+Email: bgb
+2025-02-18 11:18:09,941 - INFO - Contact Saved - {'first_name': 'yash', 'last_name': 'goyal', 'address': 'efaefev', 'city': 'fvsfivjnf', 'state': 'fvfsbiog', 'zip_code': 'bfgbgfibf', 'phone_number': 'bfgjnobf', 'email': 'gbgfnb'}
+2025-02-18 11:20:40,426 - INFO - Contact Saved - {'first_name': 'yashc', 'last_name': 'vfvsf', 'address': 'fvfvfjmfn ', 'city': 'f g igk fn', 'state': ' g  nfj ', 'zip_code': 'fgsfi', 'phone_number': 'sfdmi', 'email': 'dsfsdnfi'}
+2025-02-18 11:21:24,482 - INFO - Contact Saved - {'first_name': 'fivjf', 'last_name': 'dfvfdimv', 'address': 'fdvdfmv', 'city': 'fvfmiv', 'state': 'dfvmfk', 'zip_code': 'dfvmfdvm', 'phone_number': 'fvmfodv', 'email': 'fvmfodmv'}
+2025-02-18 11:27:31,660 - INFO - Contact Saved - {'first_name': 'frv', 'last_name': 'rfbg', 'address': 'bd', 'city': 'bg', 'state': 'bd', 'zip_code': 'bg', 'phone_number': 'bgd', 'email': 'bg'}
+2025-02-18 12:52:48,829 - INFO - Contact Saved - {'first_name': 'efe', 'last_name': 'fer', 'address': 'fr', 'city': 'ref', 'state': 'eff', 'zip_code': '23', 'phone_number': '2323', 'email': 'rvrfb'}
+2025-02-19 10:53:48,854 - INFO - Contact Saved - {'first_name': 'yash', 'last_name': 'goyal', 'address': 'fijfre', 'city': 'vfd', 'state': 'dfv', 'zip_code': 232, 'phone_number': 2113, 'email': 'jdfnkvf'}
+2025-02-19 10:54:31,633 - INFO - Contact Saved - {'first_name': 'fvifv', 'last_name': 'fvf', 'address': 'fvfvf', 'city': 'f', 'state': 'ffv', 'zip_code': 323, 'phone_number': 323, 'email': 'vfsv'}
+2025-02-19 10:54:46,285 - INFO - Contact Saved - {'first_name': 'yash', 'last_name': 'goyal', 'address': 'fdaojiv', 'city': 'rfe', 'state': 'rferf', 'zip_code': 323, 'phone_number': 323, 'email': '2vfvs'}
+2025-02-19 10:56:41,136 - INFO - Contact Saved - {'first_name': 'yash', 'last_name': 'goyal', 'address': 'freufie', 'city': 'rreunhr', 'state': 'rvreb', 'zip_code': 324, 'phone_number': 43, 'email': 'fervfs'}
+2025-02-19 10:57:19,123 - INFO - Contact Updated - {'first_name': 'yash', 'last_name': 'goyal', 'address': 'manuoffset swm', 'city': 'sawai madhopur', 'state': 'rajasthan', 'zip_code': 322001, 'phone_number': 6377475683, 'email': 'fivjfi@vfkvmf'}
+2025-02-19 11:11:36,153 - INFO - Contact Saved - {'first_name': 'ydahd', 'last_name': 'ave', 'address': 'efav', 'city': 'fvae', 'state': 'vf', 'zip_code': 234, 'phone_number': 45465, 'email': 'rfv'}
+2025-02-19 11:12:09,868 - INFO - Contact Saved - {'first_name': 'rfv', 'last_name': 'sfgg', 'address': 'sg', 'city': 'fg', 'state': 'fgf', 'zip_code': 45, 'phone_number': 4, 'email': 'bg'}
+2025-02-19 11:12:29,136 - INFO - Contact Deleted - {'first_name': 'rfv', 'last_name': 'sfgg', 'address': 'sg', 'city': 'fg', 'state': 'fgf', 'zip_code': 45, 'phone_number': 4, 'email': 'bg'}
+2025-02-19 11:26:09,356 - INFO - Contact Saved - {'first_name': 'yash', 'last_name': 'goyal', 'address': 'fjie', 'city': 'frea', 'state': 'frea', 'zip_code': 3234, 'phone_number': 43545, 'email': 'gbd'}
+2025-02-19 11:26:25,869 - INFO - Contact Saved - {'first_name': 'yoo', 'last_name': 'gooo', 'address': 'fvsv', 'city': 'vs', 'state': 'fsn', 'zip_code': 3489, 'phone_number': 438945, 'email': 'rgjis'}
+2025-02-19 11:29:38,851 - ERROR - An error occurred: invalid literal for int() with base 10: ''
+2025-02-19 11:29:41,764 - ERROR - An error occurred: invalid literal for int() with base 10: ''
+2025-02-19 11:29:58,383 - INFO - Contact Saved - {'first_name': 'yash', 'last_name': 'evf', 'address': 'vs', 'city': 'vs', 'state': 'vfs', 'zip_code': 43, 'phone_number': 342, 'email': 'vdgf'}
+2025-02-19 11:30:13,312 - ERROR - An error occurred: invalid literal for int() with base 10: ''
+2025-02-19 11:30:31,792 - INFO - Contact Saved - {'first_name': 'uvfhdsv', 'last_name': 'fvsfiv', 'address': 'vsfvfv', 'city': 'sfgbg', 'state': 'gbdf', 'zip_code': 43843, 'phone_number': 4389547, 'email': 'gvdugbjhn'}
+2025-02-19 11:30:41,380 - ERROR - An error occurred: invalid literal for int() with base 10: 'sfvbfj'
+2025-02-19 11:41:22,075 - INFO - Contact Deleted - {'first_name': 'uvfhdsv', 'last_name': 'fvsfiv', 'address': 'vsfvfv', 'city': 'sfgbg', 'state': 'gbdf', 'zip_code': 43843, 'phone_number': 4389547, 'email': 'gvdugbjhn'}
+2025-02-19 12:00:10,103 - INFO - Contact Saved - {'first_name': 'ed', 'last_name': 'vfsv', 'address': 'cdav', 'city': 'vef', 'state': 'fvsf', 'zip_code': 3444, 'phone_number': 545636, 'email': 'vd'}
+2025-02-19 12:00:20,786 - INFO - Contact Saved - {'first_name': 'fvsvs', 'last_name': 'fv', 'address': 'vs', 'city': 'gfdvg', 'state': 'fvsdf', 'zip_code': 435, 'phone_number': 54893, 'email': 'fvsvf'}
+2025-02-19 12:00:55,324 - INFO - Contact Deleted - {'first_name': 'fvsvs', 'last_name': 'fv', 'address': 'vs', 'city': 'gfdvg', 'state': 'fvsdf', 'zip_code': 435, 'phone_number': 54893, 'email': 'fvsvf'}
+2025-02-19 17:38:29,524 - INFO - Contact Saved in book1 - {'first_name': 'fvmkvi', 'last_name': 'rsbvr', 'address': 'gb', 'city': 'sbv', 'state': 'vs', 'zip_code': 32, 'phone_number': 23212, 'email': 'vfdv'}
+2025-02-20 10:15:11,670 - INFO - Contact Saved in book1 - {'first_name': 'fsfv', 'last_name': 'fvs', 'address': 'ffb', 'city': 'gfb', 'state': 'gfbs', 'zip_code': 4894, 'phone_number': 343984, 'email': 'fvudn'}
+2025-02-20 10:15:52,404 - INFO - Contact Saved in book2 - {'first_name': 'fesr', 'last_name': 'rferf', 'address': 'gvsr', 'city': 'rsgvr', 'state': 'grts', 'zip_code': 322001, 'phone_number': 434892323, 'email': 'frsfv'}
+2025-02-20 10:20:37,376 - INFO - Contact Saved in book1 - {'first_name': 'yash', 'last_name': 'goyal', 'address': 'djcnueafivnsf', 'city': 'rughsi', 'state': 'rsgun', 'zip_code': 3449824, 'phone_number': 438945729348, 'email': 'vjsnhvufbh'}
+2025-02-20 10:20:59,207 - ERROR - An error occurred: invalid literal for int() with base 10: 'resgu'
+2025-02-20 10:21:16,638 - INFO - Contact Saved in book1 - {'first_name': 'gjuiosrg', 'last_name': 'busribh', 'address': 'sbnui', 'city': 'stgihst', 'state': 'gsrgijt', 'zip_code': 392043, 'phone_number': 23829384, 'email': 'vubfnjf'}
+2025-02-20 12:12:50,730 - INFO - Contact Saved in book1 - {'first_name': 'fijsvf', 'last_name': 'vsijf', 'address': 'aveji', 'city': 'vaij', 'state': 'vriaj', 'zip_code': 23, 'phone_number': 2323, 'email': 'fvijsf'}
+2025-02-20 12:12:59,993 - INFO - Contact Saved in book1 - {'first_name': 'visej', 'last_name': 'vija', 'address': 'vijsf', 'city': "'vaifj", 'state': 'aevioj', 'zip_code': 323, 'phone_number': 23232, 'email': 'fakjsv'}
+2025-02-20 12:13:13,874 - INFO - Contact Saved in book1 - {'first_name': 'vfsjhio', 'last_name': 'afvijsv', 'address': 'vsjiosfv', 'city': 'vsiojv', 'state': 'avjio', 'zip_code': 24445, 'phone_number': 243984389, 'email': 'rfvijo'}
+2025-02-20 15:34:59,777 - INFO - Contact Saved in book1 - {'first_name': 'yash', 'last_name': 'goyal', 'address': 'vsijv', 'city': 'svfiuho', 'state': 'vseuibhfo', 'zip_code': 4389, 'phone_number': 489472372, 'email': 'fvjufiof'}
+2025-02-20 15:35:21,089 - WARNING - Duplicate entry attempt in book1 - {'first_name': 'yash', 'last_name': 'goyal', 'address': 'feuhi', 'city': 'grushr', 'state': 'gsreiuh', 'zip_code': 3289, 'phone_number': 37847834, 'email': 'ufhuvgibfj'}
+2025-02-20 15:56:55,103 - INFO - Contact Saved in book1 - {'first_name': 'funvi', 'last_name': 'vsnvi', 'address': 'fsvnv', 'city': 'fsvjfn', 'state': '34fv', 'zip_code': 3342, 'phone_number': 24345646, 'email': 'vmdjgkblgm'}
+2025-02-20 15:57:19,492 - INFO - Contact Saved in book1 - {'first_name': 'ydhuidyvbf', 'last_name': 'ufhvfsv', 'address': 'uhfisf', 'city': 'jaipur ', 'state': 'rajasthN', 'zip_code': 322001, 'phone_number': 53984849423, 'email': 'FRIJMIGB'}
+2025-02-20 16:20:16,555 - INFO - Contact Saved in book1 - {'first_name': 'ivjfi', 'last_name': 'vdfujfdo', 'address': 'vdfuvoiv', 'city': 'vfdvujfio', 'state': 'fdvufjvn', 'zip_code': 32323, 'phone_number': 23234343, 'email': 'frsvfb'}
+2025-02-20 16:20:32,257 - INFO - Contact Saved in book1 - {'first_name': 'yash', 'last_name': 'goyal', 'address': 'faiojfifvs', 'city': 'jaipur', 'state': 'raj', 'zip_code': 322001, 'phone_number': 6377475683, 'email': 'feioubjnufgb'}
+2025-02-20 16:25:47,167 - INFO - Contact Saved in book1 - {'first_name': 'yash', 'last_name': 'duihviuvf', 'address': 'vufhvfi', 'city': 'varevnreuio', 'state': 'vvifn', 'zip_code': 348934, 'phone_number': 44343, 'email': 'jfnshi'}
+2025-02-20 16:26:04,516 - INFO - Contact Saved in book1 - {'first_name': 'ydyaiuh', 'last_name': 'fseijs', 'address': 'isfjor', 'city': 'jaipur', 'state': 'raj', 'zip_code': 2323, 'phone_number': 2323434, 'email': '3vfvjksmj'}
+2025-02-20 16:33:21,614 - INFO - Contact Saved in book1 - {'first_name': 'yash', 'last_name': 'iovjv', 'address': "evniuev'", 'city': 'jaipur', 'state': 'raj', 'zip_code': 323902, 'phone_number': 3829383232, 'email': 'fjiosdjv'}
+2025-02-20 16:33:42,272 - INFO - Contact Saved in book1 - {'first_name': 'reuifhj', 'last_name': 'reuihe', 'address': 'eroregj', 'city': 'swm', 'state': 'raj', 'zip_code': 322001, 'phone_number': 34898932398, 'email': 'uerfhier'}
+2025-02-20 16:34:12,332 - INFO - Contact Saved in book2 - {'first_name': 'rifujse', 'last_name': 'ufsihref', 'address': 'irgsuehr', 'city': 'jaipur', 'state': 'ofjhuief', 'zip_code': 32344, 'phone_number': 3234454, 'email': 'gsrijbob'}
+2025-02-20 16:34:28,643 - INFO - Contact Saved in book2 - {'first_name': 'fjis', 'last_name': 'uishru', 'address': 'sruih', 'city': 'swm', 'state': 'efuij', 'zip_code': 430923, 'phone_number': 23298343, 'email': 'fuhisv'}
+2025-02-20 16:34:45,160 - INFO - Contact Saved in book2 - {'first_name': 'fers', 'last_name': 'fseuh', 'address': 'su', 'city': 'swm', 'state': 'fiuaj', 'zip_code': 4348934, 'phone_number': 894348232, 'email': 'fsuiv'}
+2025-02-20 16:37:13,212 - INFO - Contact Saved in book1 - {'first_name': 'euidheuif', 'last_name': 'efeuhir', 'address': 'eafhiuef', 'city': 'jaipur', 'state': 'feuaf', 'zip_code': 438743, 'phone_number': 237827824, 'email': 'sfuivhfv'}
+2025-02-20 16:37:25,665 - ERROR - An error occurred: invalid literal for int() with base 10: 'fusivh'
+2025-02-20 16:48:11,924 - INFO - Contact Saved in book1 - {'first_name': 'fueaif', 'last_name': 'fauiehf', 'address': 'efuhae', 'city': 'fuief', 'state': 'feuihf', 'zip_code': 122121, 'phone_number': 212121, 'email': 'sfv'}
+2025-02-20 16:48:27,760 - INFO - Contact Saved in book1 - {'first_name': 'yash', 'last_name': 'fejif', 'address': 'efwjif', 'city': 'jaipur', 'state': 'dejiej', 'zip_code': 38723, 'phone_number': 24893, 'email': 'fhuewd'}
+2025-02-20 16:48:56,399 - INFO - Contact Saved in book1 - {'first_name': 'tushar', 'last_name': 'ujv', 'address': 'ervijo', 'city': 'swm', 'state': 'dfewf', 'zip_code': 2233232, 'phone_number': 3232, 'email': 'fevsfv'}
