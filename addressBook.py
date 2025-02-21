@@ -172,6 +172,13 @@ class AddressBook:
         self.contacts.sort(key=operator.itemgetter("first_name", "last_name"))
         print("\nContacts sorted alphabetically by name.")
 
+    def sort_contacts_by_city(self):
+        """
+        Sorts the contacts alphabetically by city.
+        """
+        self.contacts.sort(key=operator.itemgetter("city"))
+        print("\nContacts sorted alphabetically by city.")
+
 def main():
     """
     Main function to manage multiple address books.
@@ -185,7 +192,8 @@ def main():
         print("3) Search Contacts by City or State")
         print("4) Count Contacts by City")
         print("5) Sort Contacts by Name")
-        print("6) Exit")
+        print("6) Sort Contacts by City")
+        print("7) Exit")
         main_choice = input("Enter your choice: ")
 
         if main_choice == "1":
@@ -202,7 +210,8 @@ def main():
                 print("3) Edit Contact")
                 print("4) Delete Contact")
                 print("5) Sort Contacts by Name")
-                print("6) Go Back")
+                print("6) Sort Contacts by City")
+                print("7) Go Back")
                 choice = input("Enter your choice: ")
 
                 if choice == "1":
@@ -258,6 +267,9 @@ def main():
                     address_book.sort_contacts_by_name()
 
                 elif choice == "6":
+                    address_book.sort_contacts_by_city()
+
+                elif choice == "7":
                     break
                 else:
                     print("Invalid choice, please try again.")
@@ -308,10 +320,16 @@ def main():
             print("All address books sorted by name.")
 
         elif main_choice == "6":
+            for address_book in address_books.values():
+                address_book.sort_contacts_by_city()
+            print("All address books sorted by city.")
+
+        elif main_choice == "7":
             print("Exiting Program.")
             break
         else:
             print("Invalid choice, please try again.")
+
 
 if __name__ == "__main__":
     main()
