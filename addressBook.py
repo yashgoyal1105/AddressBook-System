@@ -1,6 +1,4 @@
 import logging
-from collections import defaultdict
-import operator
 
 logging.basicConfig(
     filename='contacts.log',
@@ -160,23 +158,27 @@ class AddressBook:
         Returns:
             dict: Dictionary with city names as keys and contact counts as values.
         """
-        city_count = defaultdict(int)
+        city_count = {}
         for contact in self.contacts:
-            city_count[contact["city"]] += 1
-        return dict(city_count)
+            city = contact["city"]
+            if city in city_count:
+                city_count[city] += 1
+            else:
+                city_count[city] = 1
+        return city_count
 
     def sort_contacts_by_name(self):
         """
         Sorts the contacts alphabetically by first name, then last name.
         """
-        self.contacts.sort(key=operator.itemgetter("first_name", "last_name"))
+        self.contacts.sort(key=lambda x: (x["first_name"], x["last_name"]))
         print("\nContacts sorted alphabetically by name.")
 
     def sort_contacts_by_city(self):
         """
         Sorts the contacts alphabetically by city.
         """
-        self.contacts.sort(key=operator.itemgetter("city"))
+        self.contacts.sort(key=lambda x: x["city"])
         print("\nContacts sorted alphabetically by city.")
 
 def main():
@@ -299,11 +301,14 @@ def main():
                 print("No contacts found in the specified city or state.")
 
         elif main_choice == "4":
-            city_count = defaultdict(int)
+            city_count = {}
             for address_book in address_books.values():
                 counts = address_book.count_contacts_by_city()
                 for city, count in counts.items():
-                    city_count[city] += count
+                    if city in city_count:
+                        city_count[city] += count
+                    else:
+                        city_count[city] = count
 
             if city_count:
                 print("\nContact Count by City:")
