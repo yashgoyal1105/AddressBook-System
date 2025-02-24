@@ -1,4 +1,5 @@
 import logging
+import csv
 
 logging.basicConfig(
     filename='contacts.log',
@@ -6,7 +7,7 @@ logging.basicConfig(
     format='%(asctime)s - %(levelname)s - %(message)s',
 )
 
-CONTACTS_FILE = "address_books.txt"
+CONTACTS_FILE = "address_books.csv"
 
 class ContactPerson:
     """
@@ -54,7 +55,7 @@ class AddressBook:
 
     def __init__(self, name):
         """
-        Initializes an empty address book and loads contacts from a file.
+        Initializes an empty address book and loads contacts from a CSV file.
 
         Args:
             name (str): The name of the address book.
@@ -65,76 +66,21 @@ class AddressBook:
 
     def load_contacts(self):
         """
-        Loads contacts for this address book from the main file.
+        Loads contacts for this address book from the CSV file.
         """
         try:
-            self.contacts = []
-            current_book = ""
-            current_contact = {}
-
-            try:
-                with open(CONTACTS_FILE, 'r') as file:
-                    for line in file:
-                        line = line.strip()
-
-                        # Check for bookName
-                        if line.endswith(':') and not line.startswith('first_name:'):
-                            current_book = line.rstrip(':')
-                            continue
-
-                        # current book
-                        if current_book == self.name:
-                            if line.startswith('first_name:'):
-                                if current_contact:
-                                    self.contacts.append(current_contact.copy())
-                                current_contact = {}
-
-                            if ':' in line:
-                                key, value = line.split(':', 1)
-                                key = key.strip()
-                                value = value.strip().rstrip(',')
-                                current_contact[key] = value
-
-                    # Add the last contact if it belongs to current book
-                    if current_contact and current_book == self.name:
-                        self.contacts.append(current_contact.copy())
-
-            except FileNotFoundError:
-                logging.info("No existing contacts file found")
+            self.contacts = FileManager.load_address_book(self.name)
         except Exception as e:
             logging.error(f"Error loading contacts: {str(e)}")
 
-    @staticmethod
-    def save_all_books(address_books):
+    def save_contacts(self):
         """
-        Saves all address books to a single file.
-
-        Args:
-            address_books (dict): Dictionary containing all address books.
+        Saves the current address book's contacts to the CSV file.
         """
         try:
-            with open(CONTACTS_FILE, 'w') as file:
-                file.write("AddressBooks:\n")
-                file.write("_________________________\n")
-
-                for book_name, book in address_books.items():
-                    file.write(f"{book_name}:\n")
-                    for contact in book.contacts:
-                        file.write("--------------------------------\n")
-                        file.write(f"first_name: {contact['first_name']},\n")
-                        file.write(f"last_name: {contact['last_name']},\n")
-                        file.write(f"address: {contact['address']},\n")
-                        file.write(f"city: {contact['city']},\n")
-                        file.write(f"state: {contact['state']},\n")
-                        file.write(f"zip_code: {contact['zip_code']},\n")
-                        file.write(f"phone_number: {contact['phone_number']},\n")
-                        file.write(f"email: {contact['email']}\n")
-                    file.write("----------------------------------\n")
-
-            logging.info("All address books saved to file")
+            FileManager.save_address_book(self.name, self.contacts)
         except Exception as e:
             logging.error(f"Error saving contacts: {str(e)}")
-            print("Error saving contacts to file.")
 
     def add_contact(self, contact):
         """
@@ -143,17 +89,16 @@ class AddressBook:
         Args:
             contact (ContactPerson): Contact object to be added.
         """
-        if any(existing_contact["first_name"] == contact.details["first_name"] and
-               existing_contact["last_name"] == contact.details["last_name"]
-               for existing_contact in self.contacts):
-            print("Duplicate entry found. Contact not added.")
-            logging.warning(f"Duplicate entry attempt in {self.name} - {contact.details}")
-        else:
+        if not any(existing_contact["first_name"] == contact.details["first_name"] and
+                    existing_contact["last_name"] == contact.details["last_name"]
+                    for existing_contact in self.contacts):
             self.contacts.append(contact.details)
             logging.info(f"Contact added to {self.name} - {contact.details}")
             print("\nContact Saved!")
-            print("---------------------------")
-            print(contact.details)
+            self.save_contacts()
+        else:
+            print("Duplicate entry found. Contact not added.")
+            logging.warning(f"Duplicate entry attempt in {self.name} - {contact.details}")
 
     def display_contacts(self):
         """
@@ -165,14 +110,8 @@ class AddressBook:
             print(f"\n{self.name}:")
             for contact in self.contacts:
                 print("--------------------------------")
-                print(f"first_name: {contact['first_name']},")
-                print(f"last_name: {contact['last_name']},")
-                print(f"address: {contact['address']},")
-                print(f"city: {contact['city']},")
-                print(f"state: {contact['state']},")
-                print(f"zip_code: {contact['zip_code']},")
-                print(f"phone_number: {contact['phone_number']},")
-                print(f"email: {contact['email']}")
+                for key, value in contact.items():
+                    print(f"{key}: {value}")
             print("----------------------------------")
 
     def edit_contact(self, first_name, last_name, new_details):
@@ -189,13 +128,10 @@ class AddressBook:
         """
         for contact in self.contacts:
             if contact["first_name"] == first_name and contact["last_name"] == last_name:
-                new_details["first_name"] = first_name
-                new_details["last_name"] = last_name
                 contact.update(new_details)
                 logging.info(f"Contact Updated in {self.name} - {contact}")
                 print("\nContact Updated!")
-                print("---------------------------")
-                print(contact)
+                self.save_contacts()
                 return True
         print("Contact not found.")
         return False
@@ -216,6 +152,7 @@ class AddressBook:
                 self.contacts.remove(contact)
                 logging.info(f"Contact Deleted in {self.name} - {contact}")
                 print("\nContact Deleted!")
+                self.save_contacts()
                 return True
         print("Contact not found.")
         return False
@@ -257,6 +194,7 @@ class AddressBook:
         """
         self.contacts.sort(key=lambda x: (x["first_name"], x["last_name"]))
         print("\nContacts sorted alphabetically by name.")
+        self.save_contacts()
 
     def sort_contacts_by_city(self):
         """
@@ -264,25 +202,67 @@ class AddressBook:
         """
         self.contacts.sort(key=lambda x: x["city"])
         print("\nContacts sorted alphabetically by city.")
+        self.save_contacts()
+
+class FileManager:
+    """
+    Handles file operations for address books.
+    """
+
+    @staticmethod
+    def load_address_book(book_name):
+        """
+        Loads an address book from the CSV file.
+
+        Args:
+            book_name (str): The name of the address book to load.
+
+        Returns:
+            list: List of contacts for the specified address book.
+        """
+        contacts = []
+        try:
+            with open(CONTACTS_FILE, mode='r', newline='') as file:
+                reader = csv.DictReader(file)
+                for row in reader:
+                    if row['book_name'] == book_name:
+                        contacts.append(row)
+        except FileNotFoundError:
+            logging.info("No existing contacts file found")
+        return contacts
+
+    @staticmethod
+    def save_address_book(book_name, contacts):
+        """
+        Saves an address book to the CSV file.
+
+        Args:
+            book_name (str): The name of the address book to save.
+            contacts (list): List of contacts to save.
+        """
+        try:
+            temp_file = "temp_address_books.csv"
+            with open(temp_file, mode='w', newline='') as file:
+                writer = csv.DictWriter(file, fieldnames=["book_name", "first_name", "last_name", "address", "city", "state", "zip_code", "phone_number", "email"])
+                writer.writeheader()
+                for contact in contacts:
+                    contact["book_name"] = book_name
+                    writer.writerow(contact)
+
+            # Replace the original file with the temp file
+            import os
+            os.replace(temp_file, CONTACTS_FILE)
+
+            logging.info("Address book saved to file")
+        except Exception as e:
+            logging.error(f"Error saving contacts: {str(e)}")
+            print("Error saving contacts to file.")
 
 def main():
     """
     Main function to manage multiple address books.
     """
     address_books = {}
-
-    # Load existing address books
-    try:
-        with open(CONTACTS_FILE, 'r') as file:
-            current_book = None
-            for line in file:
-                line = line.strip()
-                if line.endswith(':') and not line.startswith('first_name:'):
-                    current_book = line.rstrip(':')
-                    if current_book != "AddressBooks" and current_book not in address_books:
-                        address_books[current_book] = AddressBook(current_book)
-    except FileNotFoundError:
-        pass
 
     while True:
         print("\nMain Menu:")
@@ -302,143 +282,210 @@ def main():
                 print(f"Address Book '{book_name}' created!")
 
             address_book = address_books[book_name]
-            while True:
-                print(f"\n{book_name} Menu:")
-                print("1) Add Contact")
-                print("2) Display Contacts")
-                print("3) Edit Contact")
-                print("4) Delete Contact")
-                print("5) Sort Contacts by Name")
-                print("6) Sort Contacts by City")
-                print("7) Go Back")
-                choice = input("Enter your choice: ")
-
-                if choice == "1":
-                    try:
-                        number_of_times = int(input("How many contacts do you want to add: "))
-                        for _ in range(number_of_times):
-                            print("\nEnter Contact Details:")
-                            first_name = input("First Name: ")
-                            last_name = input("Last Name: ")
-                            address = input("Address: ")
-                            city = input("City: ")
-                            state = input("State: ")
-                            zip_code = input("Zip Code: ")
-                            phone_number = input("Phone Number: ")
-                            email = input("Email: ")
-                            contact = ContactPerson(first_name, last_name, address, city,
-                                                 state, zip_code, phone_number, email)
-                            address_book.add_contact(contact)
-                            AddressBook.save_all_books(address_books)
-                    except ValueError:
-                        print("Please enter a valid number.")
-                    except Exception as e:
-                        print(f"An error occurred: {str(e)}")
-
-                elif choice == "2":
-                    address_book.display_contacts()
-
-                elif choice == "3":
-                    print("Enter Contact Name to Edit:")
-                    first_name = input("First Name: ")
-                    last_name = input("Last Name: ")
-                    try:
-                        print("Enter New Details:")
-                        new_address = input("New Address: ")
-                        new_city = input("New City: ")
-                        new_state = input("New State: ")
-                        new_zip_code = input("New Zip Code: ")
-                        new_phone_number = input("New Phone Number: ")
-                        new_email = input("New Email: ")
-                        new_details = {
-                            "address": new_address,
-                            "city": new_city,
-                            "state": new_state,
-                            "zip_code": new_zip_code,
-                            "phone_number": new_phone_number,
-                            "email": new_email
-                        }
-                        if address_book.edit_contact(first_name, last_name, new_details):
-                            AddressBook.save_all_books(address_books)
-                    except Exception as e:
-                        print(f"An error occurred: {str(e)}")
-
-                elif choice == "4":
-                    first_name = input("Enter First Name to Delete: ")
-                    last_name = input("Enter Last Name to Delete: ")
-                    if address_book.delete_contact(first_name, last_name):
-                        AddressBook.save_all_books(address_books)
-
-                elif choice == "5":
-                    address_book.sort_contacts_by_name()
-                    AddressBook.save_all_books(address_books)
-
-                elif choice == "6":
-                    address_book.sort_contacts_by_city()
-                    AddressBook.save_all_books(address_books)
-
-                elif choice == "7":
-                    break
-                else:
-                    print("Invalid choice, please try again.")
+            manage_address_book(address_book)
 
         elif main_choice == "2":
-            if not address_books:
-                print("No Address Books available.")
-            else:
-                print("\nAvailable Address Books:")
-                for name in address_books:
-                    print(f"- {name}")
+            display_address_books(address_books)
 
         elif main_choice == "3":
-            city = input("Enter City to search (or leave blank): ")
-            state = input("Enter State to search (or leave blank): ")
-            results = []
-            for address_book in address_books.values():
-                results.extend(address_book.search_by_city_or_state(city, state))
-
-            if results:
-                print("\nSearch Results:")
-                print("---------------------------")
-                for result in results:
-                    print(result)
-                    print("---------------------------")
-            else:
-                print("No contacts found in the specified city or state.")
+            search_contacts(address_books)
 
         elif main_choice == "4":
-            city_count = {}
-            for address_book in address_books.values():
-                counts = address_book.count_contacts_by_city()
-                for city, count in counts.items():
-                    city_count[city] = city_count.get(city, 0) + count
-
-            if city_count:
-                print("\nContact Count by City:")
-                print("---------------------------")
-                for city, count in city_count.items():
-                    print(f"{city}: {count}")
-                print("---------------------------")
-            else:
-                print("No contacts found in any city.")
+            count_contacts_by_city(address_books)
 
         elif main_choice == "5":
-            for address_book in address_books.values():
-                address_book.sort_contacts_by_name()
-            AddressBook.save_all_books(address_books)
-            print("All address books sorted by name.")
+            sort_contacts_by_name(address_books)
 
         elif main_choice == "6":
-            for address_book in address_books.values():
-                address_book.sort_contacts_by_city()
-            AddressBook.save_all_books(address_books)
-            print("All address books sorted by city.")
+            sort_contacts_by_city(address_books)
 
         elif main_choice == "7":
             print("Exiting Program.")
             break
         else:
             print("Invalid choice, please try again.")
+
+def manage_address_book(address_book):
+    """
+    Manages operations within a selected address book.
+
+    Args:
+        address_book (AddressBook): The address book to manage.
+    """
+    while True:
+        print(f"\n{address_book.name} Menu:")
+        print("1) Add Contact")
+        print("2) Display Contacts")
+        print("3) Edit Contact")
+        print("4) Delete Contact")
+        print("5) Sort Contacts by Name")
+        print("6) Sort Contacts by City")
+        print("7) Go Back")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            add_contact(address_book)
+        elif choice == "2":
+            address_book.display_contacts()
+        elif choice == "3":
+            edit_contact(address_book)
+        elif choice == "4":
+            delete_contact(address_book)
+        elif choice == "5":
+            address_book.sort_contacts_by_name()
+        elif choice == "6":
+            address_book.sort_contacts_by_city()
+        elif choice == "7":
+            break
+        else:
+            print("Invalid choice, please try again.")
+
+def display_address_books(address_books):
+    """
+    Displays all available address books.
+
+    Args:
+        address_books (dict): Dictionary containing all address books.
+    """
+    if not address_books:
+        print("No Address Books available.")
+    else:
+        print("\nAvailable Address Books:")
+        for name in address_books:
+            print(f"- {name}")
+
+def search_contacts(address_books):
+    """
+    Searches for contacts by city or state across all address books.
+
+    Args:
+        address_books (dict): Dictionary containing all address books.
+    """
+    city = input("Enter City to search (or leave blank): ")
+    state = input("Enter State to search (or leave blank): ")
+    results = []
+    for address_book in address_books.values():
+        results.extend(address_book.search_by_city_or_state(city, state))
+
+    if results:
+        print("\nSearch Results:")
+        print("---------------------------")
+        for result in results:
+            print(result)
+            print("---------------------------")
+    else:
+        print("No contacts found in the specified city or state.")
+
+def count_contacts_by_city(address_books):
+    """
+    Counts contacts by city across all address books.
+
+    Args:
+        address_books (dict): Dictionary containing all address books.
+    """
+    city_count = {}
+    for address_book in address_books.values():
+        counts = address_book.count_contacts_by_city()
+        for city, count in counts.items():
+            city_count[city] = city_count.get(city, 0) + count
+
+    if city_count:
+        print("\nContact Count by City:")
+        print("---------------------------")
+        for city, count in city_count.items():
+            print(f"{city}: {count}")
+        print("---------------------------")
+    else:
+        print("No contacts found in any city.")
+
+def sort_contacts_by_name(address_books):
+    """
+    Sorts contacts by name across all address books.
+
+    Args:
+        address_books (dict): Dictionary containing all address books.
+    """
+    for address_book in address_books.values():
+        address_book.sort_contacts_by_name()
+    print("All address books sorted by name.")
+
+def sort_contacts_by_city(address_books):
+    """
+    Sorts contacts by city across all address books.
+
+    Args:
+        address_books (dict): Dictionary containing all address books.
+    """
+    for address_book in address_books.values():
+        address_book.sort_contacts_by_city()
+    print("All address books sorted by city.")
+
+def add_contact(address_book):
+    """
+    Adds a new contact to the address book.
+
+    Args:
+        address_book (AddressBook): The address book to add the contact to.
+    """
+    try:
+        number_of_times = int(input("How many contacts do you want to add: "))
+        for _ in range(number_of_times):
+            print("\nEnter Contact Details:")
+            first_name = input("First Name: ")
+            last_name = input("Last Name: ")
+            address = input("Address: ")
+            city = input("City: ")
+            state = input("State: ")
+            zip_code = input("Zip Code: ")
+            phone_number = input("Phone Number: ")
+            email = input("Email: ")
+            contact = ContactPerson(first_name, last_name, address, city, state, zip_code, phone_number, email)
+            address_book.add_contact(contact)
+    except ValueError:
+        print("Please enter a valid number.")
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
+def edit_contact(address_book):
+    """
+    Edits an existing contact in the address book.
+
+    Args:
+        address_book (AddressBook): The address book containing the contact to edit.
+    """
+    print("Enter Contact Name to Edit:")
+    first_name = input("First Name: ")
+    last_name = input("Last Name: ")
+    try:
+        print("Enter New Details:")
+        new_address = input("New Address: ")
+        new_city = input("New City: ")
+        new_state = input("New State: ")
+        new_zip_code = input("New Zip Code: ")
+        new_phone_number = input("New Phone Number: ")
+        new_email = input("New Email: ")
+        new_details = {
+            "address": new_address,
+            "city": new_city,
+            "state": new_state,
+            "zip_code": new_zip_code,
+            "phone_number": new_phone_number,
+            "email": new_email
+        }
+        address_book.edit_contact(first_name, last_name, new_details)
+    except Exception as e:
+        print(f"An error occurred: {str(e)}")
+
+def delete_contact(address_book):
+    """
+    Deletes a contact from the address book.
+
+    Args:
+        address_book (AddressBook): The address book containing the contact to delete.
+    """
+    first_name = input("Enter First Name to Delete: ")
+    last_name = input("Enter Last Name to Delete: ")
+    address_book.delete_contact(first_name, last_name)
 
 if __name__ == "__main__":
     main()
