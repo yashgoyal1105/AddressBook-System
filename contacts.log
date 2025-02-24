@@ -92,3 +92,46 @@ Email: bgb
 2025-02-22 11:31:32,535 - INFO - Contact Saved in 1 - {'first_name': 'rohan', 'last_name': 'jain', 'address': 'fiewaojfaoeiwj', 'city': 'jaipur', 'state': 'raj', 'zip_code': 328932, 'phone_number': 2389234892, 'email': 'ewduahifhi@euia'}
 2025-02-22 11:32:40,821 - INFO - Contact Saved in book1 - {'first_name': 'ifejo', 'last_name': 'eaveoji', 'address': 'aveuio', 'city': 'vaeo', 'state': '2323443', 'zip_code': 23223, 'phone_number': 232332, 'email': 'fikfc'}
 2025-02-22 11:32:52,206 - INFO - Contact Saved in book1 - {'first_name': 'freojfi', 'last_name': 'efikfv', 'address': 'evipovfd', 'city': 'fermdcf', 'state': 'eidiodc', 'zip_code': 233444, 'phone_number': 3443445, 'email': 'freiovf'}
+2025-02-24 10:37:17,890 - INFO - Contact Saved in book1 - {'first_name': 'yash', 'last_name': 'uviofs', 'address': 'iosvj', 'city': 'fsvoij', 'state': 'fsiov', 'zip_code': 323, 'phone_number': 23234, 'email': 'goj d'}
+2025-02-24 10:37:32,558 - INFO - Contact Saved in book1 - {'first_name': 'iofvjvs', 'last_name': 'sfouij', 'address': 'sviofj', 'city': 'fpseoijv', 'state': 'svijo', 'zip_code': 232344, 'phone_number': 4332323, 'email': 'fvvisovjio'}
+2025-02-24 10:49:14,395 - INFO - Contact Saved in book1 - {'first_name': 'ifvojsv', 'last_name': 'fviosj', 'address': 'fiosvj', 'city': 'ifvosv', 'state': 'efoiaj', 'zip_code': 433434, 'phone_number': 2332445, 'email': 'bgif'}
+2025-02-24 10:49:21,672 - INFO - Contact Saved in book1 - {'first_name': 'rfiosvuj', 'last_name': 'bsiu', 'address': 'fvo', 'city': 'fsboij', 'state': 'sbiojs', 'zip_code': 34454, 'phone_number': 43435456, 'email': 'bgoijfgi'}
+2025-02-24 10:59:14,934 - INFO - No existing contacts file found for book1
+2025-02-24 10:59:26,422 - INFO - Contacts saved to book1_contacts.txt
+2025-02-24 10:59:26,422 - INFO - Contact saved in book1 - {'first_name': 'bgbg', 'last_name': 'rttr', 'address': 'rbrb', 'city': 'rbgrbg', 'state': 'rrvf', 'zip_code': 44345, 'phone_number': 334445, 'email': 'gh gghgbbg'}
+2025-02-24 10:59:37,676 - INFO - Contacts saved to book1_contacts.txt
+2025-02-24 10:59:37,677 - INFO - Contact saved in book1 - {'first_name': 'grbbg', 'last_name': 'gbgbbggb', 'address': 'grbgbg', 'city': 'gbbgbg', 'state': 'grgbbg', 'zip_code': 44344, 'phone_number': 44343454565, 'email': 'rggbgghgh'}
+2025-02-24 11:01:18,895 - INFO - Contacts loaded from book1_contacts.txt
+2025-02-24 11:01:35,118 - ERROR - Error saving contacts to book1_contacts.txt: name 'write' is not defined
+2025-02-24 11:01:35,119 - INFO - Contact saved in book1 - {'first_name': 'edpkoef', 'last_name': 'vfios', 'address': 'iojbfgo', 'city': 'gfoibjfg', 'state': 'giobfjsl', 'zip_code': 343454, 'phone_number': 434545656, 'email': 'frojmifr'}
+2025-02-24 11:01:57,925 - ERROR - Error saving contacts to book1_contacts.txt: name 'write' is not defined
+2025-02-24 11:01:57,926 - INFO - Contact saved in book1 - {'first_name': 'frv', 'last_name': 'ggb', 'address': 'gf', 'city': 'gg', 'state': 'gg', 'zip_code': 4334, 'phone_number': 4556, 'email': 'btngh'}
+2025-02-24 11:05:37,423 - INFO - Contacts loaded from book1_contacts.txt
+2025-02-24 11:05:42,332 - INFO - Contacts loaded from book1_contacts.txt
+2025-02-24 11:05:43,287 - INFO - Contacts loaded from book1_contacts.txt
+2025-02-24 11:06:59,652 - INFO - Contacts loaded from book1_contacts.txt
+2025-02-24 11:07:04,555 - INFO - Contacts loaded from book1_contacts.txt
+2025-02-24 11:07:20,962 - INFO - Contacts saved to book1_contacts.txt
+2025-02-24 11:07:20,962 - INFO - Contact saved in book1 - {'first_name': 'ifojsfv', 'last_name': 'fsvijo', 'address': 'rioj', 'city': 'vifjo', 'state': 'biosj', 'zip_code': '32324', 'phone_number': '344', 'email': 'vfdiuvj'}
+2025-02-24 11:07:33,889 - INFO - Contacts saved to book1_contacts.txt
+2025-02-24 11:07:33,890 - INFO - Contact saved in book1 - {'first_name': 'usfijvf', 'last_name': 'sbjogb', 'address': 'iojsgfb', 'city': 'bgboigj', 'state': 'ogifb', 'zip_code': '43554', 'phone_number': '44567', 'email': 'kltmb'}
+2025-02-24 11:08:02,813 - INFO - No existing contacts file found for 1
+2025-02-24 11:08:38,403 - INFO - No existing contacts file found for book2
+2025-02-24 11:08:48,822 - INFO - Contacts saved to book2_contacts.txt
+2025-02-24 11:08:48,822 - INFO - Contact saved in book2 - {'first_name': 'efioajf', 'last_name': 'fevsoufij', 'address': 'fs', 'city': 'vsui', 'state': 'vfiosj', 'zip_code': '323443', 'phone_number': '3434545', 'email': 'roivjbso'}
+2025-02-24 11:08:56,933 - INFO - Contacts saved to book2_contacts.txt
+2025-02-24 11:08:56,933 - INFO - Contact saved in book2 - {'first_name': 'isoj', 'last_name': 'ioj', 'address': 'sijo', 'city': 'ifosbj', 'state': 'iojvs', 'zip_code': '32344', 'phone_number': '4546577878', 'email': 'dniop'}
+2025-02-24 11:15:01,088 - INFO - Contact added to book1 - {'first_name': 'froif', 'last_name': 'fiojf', 'address': 'fiufv', 'city': 'fvioj', 'state': 'bfioj', 'zip_code': '545456', 'phone_number': '4343546', 'email': 'oirjvbg'}
+2025-02-24 11:15:01,090 - INFO - All address books saved to file
+2025-02-24 11:15:13,694 - INFO - Contact added to book1 - {'first_name': 'gsuihg', 'last_name': 'gvsuoifb', 'address': 'bosij', 'city': 'soijbfg', 'state': 'soirjbgb', 'zip_code': '43454565', 'phone_number': '5456566734', 'email': 'roigsbgf'}
+2025-02-24 11:15:13,696 - INFO - All address books saved to file
+2025-02-24 11:16:40,119 - INFO - Contact added to book2 - {'first_name': 'feoaijvf', 'last_name': 'fbofbisb', 'address': 'fbijsfob', 'city': 'bsfbigojb', 'state': 'bfsobijg', 'zip_code': '433546', 'phone_number': '53445566', 'email': '43iorgjiog'}
+2025-02-24 11:16:40,121 - INFO - All address books saved to file
+2025-02-24 11:16:51,135 - INFO - Contact added to book2 - {'first_name': 'yahdayufhvsfuy', 'last_name': 'bbguiobsgb', 'address': 'bgsbuigb', 'city': 'sbobijsb', 'state': 'bbsoijb', 'zip_code': '545665', 'phone_number': '22343', 'email': 'bgoib'}
+2025-02-24 11:16:51,136 - INFO - All address books saved to file
+2025-02-24 11:17:15,647 - INFO - Contact Deleted in book2 - {'first_name': 'yahdayufhvsfuy', 'last_name': 'bbguiobsgb', 'address': 'bgsbuigb', 'city': 'sbobijsb', 'state': 'bbsoijb', 'zip_code': '545665', 'phone_number': '22343', 'email': 'bgoib'}
+2025-02-24 11:17:15,648 - INFO - All address books saved to file
+2025-02-24 11:32:59,001 - INFO - Contact added to book2 - {'first_name': 'rfr', 'last_name': 'fbsgsfb', 'address': 'gfbsg', 'city': 'gbgfbs', 'state': 'gsbgsbs', 'zip_code': '344343', 'phone_number': '554665', 'email': '4342bgssb'}
+2025-02-24 11:32:59,002 - INFO - All address books saved to file
+2025-02-24 11:33:04,017 - INFO - Contact added to book2 - {'first_name': 'rsgbg', 'last_name': 'rgbs', 'address': 'gts', 'city': 'rgbg', 'state': 'bd', 'zip_code': '4545', 'phone_number': '656', 'email': '6gdnhgnd'}
+2025-02-24 11:33:04,017 - INFO - All address books saved to file
