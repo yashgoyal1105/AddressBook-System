@@ -150,3 +150,25 @@ Email: bgb
 2025-02-24 14:55:06,229 - INFO - Address book saved to file
 2025-02-24 14:55:18,975 - INFO - Contact added to book1 - {'first_name': 'fdiozjv', 'last_name': 'advfiodj', 'address': 'eiubovjf', 'city': 'edvij', 'state': 'fbdiu', 'zip_code': '32389344', 'phone_number': '48934834', 'email': 'sroibjoi'}
 2025-02-24 14:55:18,979 - INFO - Address book saved to file
+2025-02-24 15:09:34,815 - INFO - No existing contacts file found
+2025-02-24 15:09:54,284 - INFO - Contact added to book1 - {'first_name': 'aeiovj', 'last_name': 'vfiojv', 'address': 'afiojbf', 'city': 'afbijodb', 'state': 'afbijodb', 'zip_code': '3298438', 'phone_number': '239824838934', 'email': 'fjifvz'}
+2025-02-24 15:09:54,285 - ERROR - Error saving contacts: [Errno 2] No such file or directory: 'address_books.json'
+2025-02-24 15:10:03,548 - INFO - Contact added to book1 - {'first_name': 'ruieha', 'last_name': 'aeroijra', 'address': 'reaiuh', 'city': 'reioj', 'state': 'raoijef', 'zip_code': '849489', 'phone_number': '32893824983', 'email': 'earjfnbvfk'}
+2025-02-24 15:10:03,550 - ERROR - Error saving contacts: [Errno 2] No such file or directory: 'address_books.json'
+2025-02-24 15:23:28,496 - INFO - No existing contacts file found
+2025-02-24 15:23:38,994 - INFO - Contact added to 1 - {'first_name': 'aiojfv', 'last_name': 'vfdvoufjz', 'address': 'fvijofv', 'city': "dfvijodf'v", 'state': 'fdiv', 'zip_code': '43894', 'phone_number': '3489483954', 'email': '43984fjioe'}
+2025-02-24 15:23:38,996 - INFO - All address books saved to JSON file
+2025-02-24 15:23:48,525 - INFO - Contact added to 1 - {'first_name': 'adjfiov839434', 'last_name': 'vesijovsr', 'address': 'gwtrsbjiob', 'city': 'rstipbj', 'state': "ipsejb'if", 'zip_code': '43894832', 'phone_number': 'ojifeoijvf8934', 'email': 'aerio'}
+2025-02-24 15:23:48,527 - INFO - All address books saved to JSON file
+2025-02-24 15:24:45,431 - ERROR - Error loading address books: Expecting value: line 1 column 1 (char 0)
+2025-02-24 15:24:50,955 - ERROR - Error loading contacts: Expecting value: line 1 column 1 (char 0)
+2025-02-24 15:25:00,643 - INFO - Contact added to book1 - {'first_name': 'aoijv', 'last_name': 'dfvoizj', 'address': 'dvnzio', 'city': 'dfzjbiofd', 'state': 'bifodhz', 'zip_code': '3984349', 'phone_number': '34893489458', 'email': 'vfioj'}
+2025-02-24 15:25:00,646 - INFO - All address books saved to JSON file
+2025-02-24 15:25:06,086 - INFO - Contact added to book1 - {'first_name': 'iojvzdif', 'last_name': 'fibjb', 'address': 'bjfgibx', 'city': 'ig', 'state': 'bggfxi', 'zip_code': '32893', 'phone_number': '343', 'email': '5'}
+2025-02-24 15:25:06,088 - INFO - All address books saved to JSON file
+2025-02-24 15:25:36,070 - INFO - Contact added to book2 - {'first_name': 'aevj', 'last_name': 'fdf', 'address': 'djbifb', 'city': 'gfbjofb', 'state': 'ofof', 'zip_code': '324342', 'phone_number': '4348958', 'email': 'ijofaef'}
+2025-02-24 15:25:36,073 - INFO - All address books saved to JSON file
+2025-02-24 15:25:46,093 - INFO - Contact added to book2 - {'first_name': 'eoiurg', 'last_name': 'ejrige', 'address': 'gfrgi', 'city': 'szej', 'state': 'ejoiz', 'zip_code': '8324', 'phone_number': '34839893', 'email': 'uaeihrgzvuzhi'}
+2025-02-24 15:25:46,097 - INFO - All address books saved to JSON file
+2025-02-24 15:25:57,315 - INFO - Contact added to book2 - {'first_name': 'uaiehwf', 'last_name': 'aefuihf', 'address': 'afghaeirge', 'city': 'iagirahgi', 'state': 'aioerg', 'zip_code': '32892389', 'phone_number': '23892894389', 'email': 'ueihfdzvd'}
+2025-02-24 15:25:57,318 - INFO - All address books saved to JSON file
